@@ -100,11 +100,13 @@ module.exports = function(RED) {
                 msg.slackObj = {
                     "id": message.id,
                     "type": message.type,
+                    "subtype": message.subtype,
                     "text": message.text,
                     "channelName": slackChannel.name,
                     "channel": message.channel,
                     "fromUser": fromUser.name,
-                    "attachments" : message.attachments
+                    "attachments": message.attachments,
+                    "file": message.file
                 };
 
                 node.send(msg);
